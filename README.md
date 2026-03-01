@@ -2,10 +2,10 @@
 это мой *rice* для оконного менеджера [niri](https://github.com/YaLTeR/niri).
 
 ## скриншоты
-![Скриншот рабочего стола Niri 0](./screenshots/pfetch_2026-02-23_07-21.png)
-![Скриншот рабочего стола Niri 1](./screenshots/tmux_2026-02-23_07-20.png)
-![Скриншот рабочего стола Niri 3](./screenshots/fuzzle_2026-02-23_07-21.png)
-![Скриншот рабочего стола Niri 5](./screenshots/keybind.png)
+![Скриншот рабочего стола Niri 0](./resurces/screenshots/pfetch_2026-02-23_07-21.png)
+![Скриншот рабочего стола Niri 1](./resurces/screenshots/tmux_2026-02-23_07-20.png)
+![Скриншот рабочего стола Niri 3](./resurces/screenshots/fuzzle_2026-02-23_07-21.png)
+![Скриншот рабочего стола Niri 5](./resurces/screenshots/keybind.png)
 
 ## особенности
 *   ![цветовая схема](./colors): `gruvbox` + `Pywal`
@@ -19,11 +19,15 @@
     [tmux](https://github.com/tmux/tmux),
     [fish](https://github.com/fish-shell/fish-shell),
     [gammastep](https://gitlab.com/chinstrap/gammastep),
-    [cmus](https://github.com/cmus/cmus)
+    [cmus](https://github.com/cmus/cmus),
+    [swaylock](https://github.com/swaywm/swaylock)
 
 ## конфигурация tmux
-
 В этом репозитории лежит мой конфиг **tmux** с [tpm](https://github.com/tmux-plugins/tpm) и [gruvbox](https://github.com/TemaSoul/rice_niri/tree/main/tmux/.tmux/plugins/tmux-gruvbox)
+
+## swaylock
+*   зависимости: `swaylock-effects` из AUR
+![swaylock.gif](./resurces/gif/swaylock.gif)
 
 ## зависимости
 *   базовые инструменты сборки: `base-devel`, `git`
