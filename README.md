@@ -1,18 +1,6 @@
 # my rice niri
 это мой *rice* для оконного менеджера [niri](https://github.com/YaLTeR/niri).
 
-## структура репозитория
-rice_niri/
-├── niri/               # конфиг niri
-├── foot/               # терминал foot
-├── fuzzel/             # лаунчер fuzzel
-├── gammastep/          # управление цветовой температурой
-├── tmux/               # конфиг tmux и плагины (tpm + gruvbox)
-├── resources/          # скриншоты и гифки
-│   ├── screenshots/
-│   └── gif/
-└── README.md
-
 ## скриншоты
 ![Скриншот рабочего стола Niri 0](./resurces/screenshots/pfetch_2026-02-23_07-21.png)
 ![Скриншот рабочего стола Niri 1](./resurces/screenshots/tmux_2026-02-23_07-20.png)
