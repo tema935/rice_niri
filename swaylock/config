@@ -1,0 +1,48 @@
+daemonize
+show-failed-attempts
+clock
+screenshot
+effect-blur=15x15
+effect-vignette=1:1
+grace=0
+grace-no-touch
+ignore-empty-password
+# date & time
+datestr=%d.%m.%y
+timestr=%H:%M:%S 
+# индикатор
+indicator
+indicator-radius=250
+indicator-thickness=25
+# шрифт
+font=Inter
+# gruvbox 
+color=282828
+bs-hl-color=fb4934
+caps-lock-bs-hl-color=fb4934
+caps-lock-key-hl-color=b8bb26
+inside-color=3c3836
+inside-clear-color=fabd2f
+inside-caps-lock-color=d79921
+inside-ver-color=83a598
+inside-wrong-color=fb4934
+key-hl-color=b8bb26
+layout-bg-color=282828
+layout-border-color=504945
+layout-text-color=ebdbb2
+line-color=282828
+line-clear-color=282828
+line-caps-lock-color=282828
+line-ver-color=282828
+line-wrong-color=282828
+ring-color=504945
+ring-clear-color=fabd2f
+ring-caps-lock-color=d79921
+ring-ver-color=83a598
+ring-wrong-color=fb4934
+separator-color=282828
+text-color=ebdbb2
+text-clear-color=282828
+text-caps-lock-color=282828
+text-ver-color=282828
+text-wrong-color=282828
