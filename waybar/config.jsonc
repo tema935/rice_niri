@@ -4,7 +4,7 @@
     "height": 24,
     "modules-left": ["niri/workspaces", "niri/window"],
     "modules-center": [],
-    "modules-right": ["niri/language", "clock"],
+    "modules-right": ["wireplumber", "niri/language", "clock"],
     
     "niri/workspaces": {
         "format": "{index}",
@@ -13,7 +13,12 @@
             "*": 6
         }
     },
-
+    "wireplumber": {
+        "format": "| {volume}%",
+        "format-muted": "🔇",
+        // "on-click": "pavucontrol",
+        "scroll-step": 5
+    },
     "niri/window": {
         "format": "{}",
         "separate-outputs": true
