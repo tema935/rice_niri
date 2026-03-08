@@ -4,7 +4,7 @@
 ## скриншоты
 ![Скриншот рабочего стола Niri 0](./resurces/screenshots/pfetch.png)
 ![Скриншот рабочего стола Niri 1](./resurces/screenshots/tmux.png)
-![Скриншот рабочего стола Niri 3](./resurces/screenshots/fuzzle_2026-02-23_07-21.png)
+![Скриншот рабочего стола Niri 3](./resurces/screenshots/fuzzle.png)
 
 ## особенности
 *   ![цветовая схема](./colors): `gruvbox` + `Pywal`
