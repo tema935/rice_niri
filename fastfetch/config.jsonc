@@ -1,0 +1,30 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small", // Использовать компактный ASCII-арт (как в pfetch)
+        "padding": {
+            "top": 1,
+            "right": 2
+        }
+    },
+    "display": {
+        "separator": "  ", // Чистый разделитель без двоеточий
+        "color": {
+            "keys": "magenta" // Цвет заголовков (можно менять на blue, green и т.д.)
+        },
+        "key": {
+            "width": 10
+        }
+    },
+    "modules": [
+        "os",
+        "host",
+        "shell",
+        "kernel",
+        "wm",
+        "uptime",
+        "packages",
+        "memory"
+    ]
+}
+

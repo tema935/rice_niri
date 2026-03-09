@@ -2,7 +2,7 @@
 это мой *rice* для оконного менеджера [niri](https://github.com/YaLTeR/niri).
 
 ## скриншоты
-![Скриншот рабочего стола Niri 0](./resurces/screenshots/pfetch.png)
+![Скриншот рабочего стола Niri 0](./resurces/screenshots/fetch.png)
 ![Скриншот рабочего стола Niri 1](./resurces/screenshots/tmux.png)
 ![Скриншот рабочего стола Niri 3](./resurces/screenshots/fuzzle.png)
 
@@ -27,6 +27,9 @@
 ## swaylock
 *   зависимости: `swaylock-effects` из AUR
 ![swaylock gif](https://github.com/TemaSoul/rice_niri/blob/main/resurces/gif/swaylock.gif)
+
+## fastfetch
+![fehch](./resurces/screenshots/fastfetch.png)
 
 ## keybinds
 `Mod`+`Shift`+`/`
