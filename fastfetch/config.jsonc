@@ -23,6 +23,7 @@
         "kernel",
         "wm",
         "uptime",
+        "cpu",
         "packages",
         "memory"
     ]
