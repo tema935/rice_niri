@@ -30,11 +30,11 @@
 ![swaylock gif](https://codeberg.org/tema93/rice_niri/raw/branch/main/resurces/gif/swaylock.gif)
 
 ## waybar
-![waybar](./resurces/screenshots/waybar.png)
+![waybar](./resurces/screenshots/waybar.pn)
 
 ![config waybar](./waybar/)
 ## fastfetch
-![fehch](./resurces/screenshots/fastfetch.png)
+![fehch](./resurces/screenshots/fastfetch.pn)
 
 ![config fastfetch](./fastfetch/)
 
