@@ -14,7 +14,7 @@
     [fuzzel](https://codeberg.org/dnkl/fuzzel),
     [foot](https://codeberg.org/dnkl/foot),
     [cliphist](https://github.com/sentriz/cliphist),
-    [swww](https://github.com/LGFae/swww),
+    [awww](https://codeberg.org/LGFae/awww),
     [tmux](https://github.com/tmux/tmux),
     [fish](https://github.com/fish-shell/fish-shell),
     [fastfetch](https://github.com/fastfetch-cli/fastfetch)

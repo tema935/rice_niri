@@ -2,9 +2,9 @@
     "layer": "top",
     "position": "top",
     "height": 24,
-    "modules-left": ["niri/workspaces", "niri/window"],
+    "modules-left": ["niri/workspaces", "custom/void", "custom/dwm", "niri/window"],
     "modules-center": [],
-    "modules-right": ["wireplumber", "niri/language", "clock"],
+    "modules-right": ["custom/separater", "wireplumber", "custom/separater", "niri/language", "custom/separater", "clock"],
     
     "niri/workspaces": {
     "format": "{icon}", 
@@ -18,12 +18,11 @@
         "7": "七",
         "8": "八",
         "9": "九",
-        // "active": "●",
-        "default": "○"
+        "default": "№"
     }
     },
     "wireplumber": {
-        "format": "| {volume}%",
+        "format": "{volume}%",
         // "on-click": "pavucontrol",
         "scroll-step": 5
     },
@@ -32,35 +31,30 @@
         "separate-outputs": true
     },
 
-    // "cpu": {
-    //     "interval": 10,
-    //     "format": "| cpu {usage}%",
-    //     "tooltip": false
-    // },
-    //
-    // "custom/gpu": {
-    //     "interval": 5,
-    //     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits",
-    //     "format": "| gpu {}%",
-    //     "tooltip": false
-    // },
-    //
-    //
-    // "memory": {
-    //     "interval": 30,
-    //     "format": "| ram {used:0.1f} gb",
-    //     "tooltip": false
-    // },
-
     "niri/language": {
         "format": "{}",
-        "format-en": "| us",
-        "format-ru": "| ru"
+        "format-en": "us",
+        "format-ru": "ru"
+    },
+
+    "custom/void": {
+      "exec": "echo ' '",
+      "interval": 0
+    },
+
+    "custom/separater": {
+      "exec": "echo ' | '",
+      "interval": 0
+    },
+
+    "custom/dwm": {
+        "exec": "echo '[]='",
+        "interval": 0
     },
 
     "clock": {
         "interval": 1,
-        "format": "| {:%d.%m.%Y / %H:%M:%S}",
+        "format": "{:%d.%m.%Y / %H:%M:%S}",
         "tooltip": false
     }
 }
