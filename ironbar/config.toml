@@ -1,0 +1,37 @@
+position = "top"
+height = 24
+
+[[start]]
+type = "workspaces"
+
+[[center]]
+type = "focused"
+icon_size = 16
+
+[[end]]
+type = "battery"
+show_if = "[ -f /sys/class/power_supply/BAT0 ]"
+
+[[end]]
+type = "volume"
+
+# [[widgets]]
+# type = "script"
+# mode = "poll"
+# interval = 500
+# command = "niri msg -j keyboard-layouts | jq -r '.names[.current_idx]' | cut -c1-2 | tr '[:lower:]' '[:upper:]'"
+# on_click_left = "niri msg action switch-layout next"
+
+[[end]]
+type = "script"
+name = "kb-layout"
+mode = "poll"
+interval = 500
+cmd = "sh -c \"niri msg -j keyboard-layouts | jq -r '.names[.current_idx]' | cut -c1-2 | tr '[:lower:]' '[:upper:]'\""
+on_click_left = "niri msg action switch-layout next"
+
+[[end]]
+type = "clock"
+name = "clock"
+format = "%d.%m.%Y / %H:%M:%S"
+interval = 1

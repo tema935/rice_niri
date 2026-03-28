@@ -20,7 +20,8 @@
     [fastfetch](https://github.com/fastfetch-cli/fastfetch)
     [gammastep](https://gitlab.com/chinstrap/gammastep),
     [cmus](https://github.com/cmus/cmus),
-    [swaylock](https://github.com/swaywm/swaylock)
+    [swaylock](https://github.com/swaywm/swaylock),
+    [ironbar](https://github.com/JakeStanger/ironbar)
 
 ## конфигурация tmux
 В этом репозитории лежит мой конфиг **tmux** с [tpm](https://github.com/tmux-plugins/tpm) и [gruvbox](https://github.com/TemaSoul/rice_niri/tree/main/tmux/.tmux/plugins/tmux-gruvbox)
@@ -29,10 +30,10 @@
 *   зависимости: `swaylock-effects` из AUR
 ![swaylock gif](https://codeberg.org/tema93/rice_niri/raw/branch/main/resurces/gif/swaylock.gif)
 
-## waybar
-![waybar](./resurces/screenshots/waybar.png)
+## ironbar
+![ironbar](./resurces/screenshots/ironbar.png)
 
-![config waybar](./waybar/)
+![config ironbar](./ironbar/)
 ## fastfetch
 ![fehch](./resurces/screenshots/fastfetch.png)
 
