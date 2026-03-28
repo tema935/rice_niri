@@ -264,7 +264,7 @@ spawn-sh-at-startup "docker run searxng"
 spawn-sh-at-startup "gammastep"
 spawn-at-startup "flameshot"
 spawn-at-startup "firefox"
-spawn-sh-at-startup "Telegram"
+spawn-at-startup "KeePassXC"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
