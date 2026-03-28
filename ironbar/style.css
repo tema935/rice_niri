@@ -1,22 +1,17 @@
 :root {
-    --color-dark-primary: #1c1c1caa;
-    --color-dark-secondary: #2d2d2daa;
-
-    --color-border-dark: #776DE844;
-    --color-border-light: #776DE822;
-
-    --color-white: #fff;
-    --color-active: #776DE8CC;
-    --color-urgent: #8f0a0a;
-
-    --gradient: linear-gradient(90deg, #6699CC19 35%, #CC99CC19 100%);
+    --bg-dark: #222222;        /* Фон панели */
+    --bg-focus: #81A42C;       /* акцент  */
+    --bg-sec: #444444;         /* Вторичный серый */
+    --fg-norm: #bbbbbb;        /* Обычный текст */
+    --fg-white: #eeeeee;       /* Яркий текст */
+    --urgent: #ff0000;
 
     --margin-lg: 1em;
-    --margin-sm: 0.5em;
+    --margin-sm: 0.45em;
     --margin-xs: 0.25em;
 
     --size-xxl: 2.6em;
-    --size-xl: 2.2em;
+    --size-xl: 2.5em;
     --size-lg: 1.5em;
     --size-md: 16px;
 }
@@ -43,7 +38,10 @@ box, button, label, calendar {
 }
 
 #bar, popover contents {
-    background: var(--gradient);
+    background-color: #222222; /* Классический темно-серый DWM */
+    color: #bbbbbb;
+    font-family: "monospace"; /* Моноширинный шрифт — база для DWM */
+    font-size: 13px;
 }
 
 scale.horizontal highlight {
@@ -81,6 +79,54 @@ radio {
     margin-left: var(--margin-sm);
 }
 
+#separator {
+    color: var(--fg-norm); 
+    padding: 0 0px;
+    font-weight: normal;
+}
+
+#dwm-layout {
+    background-color: var(--bg-dark); 
+    color: var(--fg-norm);
+    padding: 0 8px;
+    
+}
+
+/* --- Заголовок окна (Focused) --- */
+#window-title {
+    background-color: transparent; /* Убираем заливку фоном */
+    color: var(--fg-white);        /* Текст теперь светлый на сером фоне */
+    padding: 0 12px;
+    margin: 0;
+    
+    /* Та самая полоска как в DWM / на воркспейсах */
+    border-bottom: 2px solid var(--bg-focus); /* Твой зеленый #81A42C */
+    
+    /* Растягиваем до конца секции start */
+    -gtk-box-expand: true;
+    flex-grow: 1;
+}
+
+/* Если окна нет — полоска станет невидимой, так как у блока будет ширина 0 */
+#window-title:empty {
+    border-bottom: 2px solid transparent !important;
+    padding: 0 !important;
+}
+
+/* Стиль текста и иконки внутри */
+#window-title label {
+    color: var(--fg-white);
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+#window-title image {
+    margin-right: 4px;
+    /* Если иконка слишком яркая, можно чуть приглушить */
+    opacity: 0.9;
+}
+
+
 .popup {
     padding: var(--margin-lg);
 }
@@ -88,7 +134,6 @@ radio {
 /* --- clock --- */
 
 .clock {
-    font-weight: bold;
 }
 
 .popup-clock .calendar-clock {
@@ -109,99 +154,6 @@ radio {
     border-top: 1px solid var(--color-border-light);
 }
 
-/* --- launcher --- */
-
-.launcher .item + .item {
-    margin-left: 4px;
-}
-
-.launcher .item.open {
-    box-shadow: inset 0 -1px var(--color-white);
-}
-
-.launcher .item.focused {
-    box-shadow: inset 0 -1px var(--color-active);
-}
-
-.launcher .item.urgent {
-    box-shadow: inset 0 -1px var(--color-urgent);
-}
-
-.popup-launcher {
-    padding: var(--margin-sm);
-}
-
-.popup-launcher .popup-item {
-    padding: var(--margin-lg);
-    border-radius: 10px;
-}
-
-.popup-launcher .popup-item label {
-    margin-top: var(--margin-sm);
-}
-
-/* --- menu --- */
-
-.menu label {
-    padding: 0 var(--margin-sm);
-}
-
-.popup-menu .sub-menu {
-    border-left: 1px solid var(--color-border-light);
-    padding-left: var(--margin-sm);
-}
-
-.popup-menu .category, .popup-menu .application {
-    padding: var(--margin-xs);
-}
-
-.popup-menu .category.open {
-    background-color: var(--color-dark-secondary);
-}
-
-/* --- music --- */
-
-.popup-music .album-art {
-    margin-right: var(--margin-lg);
-    border-radius: 5px;
-}
-
-.popup-music .icon-box {
-    margin-right: var(--margin-sm);
-}
-
-.popup-music .title .icon, .popup-music .title .label {
-    font-size: var(--size-lg);
-}
-
-.popup-music .artist .label, .popup-music .album .label {
-    margin-left: 6px;
-}
-
-.popup-music .volume .icon {
-    /* fix icon offset */
-    margin-right: 3px;
-}
-
-/* --- notifications --- */
-
-.notifications .count {
-    font-size: 0.8em;
-    padding: 0.18em;
-}
-
-/* --- sysinfo --- */
-
-.sysinfo > .item + .item {
-    margin-left: var(--margin-sm);
-}
-
-/* --- tray --- */
-
-.tray popover contents {
-    padding: var(--margin-lg);
-}
-
 /* --- volume --- */
 
 .popup-volume .device-box {
@@ -210,53 +162,38 @@ radio {
 
 /* --- workspaces --- */
 
-.workspaces .item.visible {
-    box-shadow: inset 0 -1px var(--color-white);
+/* Базовый вид кнопки */
+.workspaces button {
+    padding: 0 10px;
+    color: var(--fg-norm); /* Неактивные/пустые — тусклые */
+    background: transparent;
+    border-bottom: 2px solid transparent; /* Заготовка под черту */
 }
 
-.workspaces .item.focused {
-    box-shadow: inset 0 -1px var(--color-active);
-    background-color: var(--color-dark-secondary);
+.workspaces button.visible label::after {
+    content: "·";
+    color: var(--bg-focus);
+    font-weight: bold;
 }
 
-.workspaces .item.urgent {
-    background-color: var(--color-urgent);
+/* Активный воркспейс (где ты сейчас) */
+.workspaces button.focused {
+    background-color: var(--bg-focus); /* Тот самый синий DWM */
+    color: #ffffff;
+    border-bottom: 2px solid #f3f3f3; /* Белая яркая черта */
 }
 
-/* --- custom: power menu ---  */
-
-.popup-power-menu #header {
-    font-size: var(--size-lg);
-    margin-bottom: 0.6em;
+/* Если есть срочное уведомление */
+.workspaces button.urgent {
+    background-color: #bb0000;
+    color: white;
 }
-
-.popup-power-menu .power-btn {
-    border: 1px solid var(--color-border-dark);
-    border-radius: 10px;
-    padding: 0 1.2em;
-}
-
-.popup-power-menu .power-btn label {
-    font-size: var(--size-xxl);
-}
-
-/* need to use funky selector
-due to widgets being wrapped in GtkRevealers */
-.popup-power-menu #buttons > * + * {
-    margin-left: 1.3em;
-}
-
 /* Стили для всех скриптов */
 .widget.script {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin: 1px;
-    color: white; /* Цвет текста */
-    /* background: rgba(255, 255, 255, 0.1); /* Легкий фон для теста */ */
-    border-radius: 0px;
-}
+  color: white; /* Цвет текста */
+
+
 
 /* Если вы дали виджету имя (name = "keyboard-layout") */
 #kb-layout {
-    font-weight: bold;
 }

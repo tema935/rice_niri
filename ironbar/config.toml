@@ -1,26 +1,41 @@
 position = "top"
-height = 24
+height = 15
+spacing = 0  # Установите в 0, чтобы убрать зазоры между всеми виджетами
+
 
 [[start]]
 type = "workspaces"
+# Показывать все рабочие столы (от 1 до 9, например) // 一 二 三 四 五 六 七 八 九
+all_monitors = true
+name_map = { "1" = "一", "2" = "二", "3" = "三", "4" = "四", "5" = "五", "6" = "六", "7" = "七", "8" = "八", "9" = "九" }
 
-[[center]]
+[[start]]
+type = "label"
+name = "dwm-layout"
+label = "[]="
+
+[[start]]
 type = "focused"
+name = "window-title"
 icon_size = 16
+show_icon = true
 
 [[end]]
 type = "battery"
 show_if = "[ -f /sys/class/power_supply/BAT0 ]"
 
 [[end]]
+type = "label"
+label = "|"
+name = "separator"
+
+[[end]]
 type = "volume"
 
-# [[widgets]]
-# type = "script"
-# mode = "poll"
-# interval = 500
-# command = "niri msg -j keyboard-layouts | jq -r '.names[.current_idx]' | cut -c1-2 | tr '[:lower:]' '[:upper:]'"
-# on_click_left = "niri msg action switch-layout next"
+[[end]]
+type = "label"
+label = "|"
+name = "separator"
 
 [[end]]
 type = "script"
@@ -29,6 +44,11 @@ mode = "poll"
 interval = 500
 cmd = "sh -c \"niri msg -j keyboard-layouts | jq -r '.names[.current_idx]' | cut -c1-2 | tr '[:lower:]' '[:upper:]'\""
 on_click_left = "niri msg action switch-layout next"
+
+[[end]]
+type = "label"
+label = "|"
+name = "separator"
 
 [[end]]
 type = "clock"
