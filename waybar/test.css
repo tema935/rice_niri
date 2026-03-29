@@ -1,0 +1,11 @@
+#workspaces button {
+    color: #bbbbbb;
+    background: #222222;
+    padding: 2px 10px;
+    /* Рисуем маленький белый квадрат 4x4 в левом верхнем углу */
+    background-image: linear-gradient(to right, white 4px, transparent 4px), 
+                      linear-gradient(to bottom, white 4px, transparent 4px);
+    background-repeat: no-repeat;
+    background-size: 4px 4px;
+    background-position: 2px 2px;
+}

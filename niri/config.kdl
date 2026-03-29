@@ -419,7 +419,7 @@ binds {
     // shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+Alt+R hotkey-overlay-title="Restart waybar"{spawn-sh "pkill waybar && waybar"; }
+    Mod+Alt+R hotkey-overlay-title="Restart waybaк"{spawn-sh "pkill waybar && waybar"; }
 
     Mod+V hotkey-overlay-title="Open clipmenu"{spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
     
