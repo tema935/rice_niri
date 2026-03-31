@@ -1,3 +1,0 @@
-[submodule "ironbar/config"]
-	path = ironbar/config
-	url = https://codeberg.org/tema93/ironbar_dwm-like.git
