@@ -1,370 +1,231 @@
-<h3 align="center">
-	<!-- <img src="https://raw.githubusercontent.com/z3z1ma/tmux-gruvbox/main/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/> -->
-	<img src="https://raw.githubusercontent.com/z3z1ma/tmux-gruvbox/main/assets/misc/transparent.png" height="30" width="0px"/>
-	Gruvbox for <a href="https://github.com/tmux/tmux">Tmux</a>
-	<img src="https://raw.githubusercontent.com/z3z1ma/tmux-gruvbox/main/assets/misc/transparent.png" height="30" width="0px"/>
-</h3>
+<div align="center">
+    <img src="https://i.imgur.com/Ukyf4Iu.png" width="200px" referrerpolicy="no-referrer">
+    <h1>Gruvbox theme for Tmux</h1>
+</div>
 
-<p align="center">
-  <!-- <img src="./assets/preview.webp"/> -->
-</p>
+Theme with 'retro groove' flavor for [Tmux][github-tmux], based on Pavel Pertsev's [gruvbox colorscheme][github-grovbox] and inspired by work of [Gordon Chiam](https://gist.github.com/gchiam/4606522f513cc64b79ce). Subthemes switching inspired by [tmux-color-solarized][github-seebi-tmux-color-solarized].
 
-## Content
+<!--
+  Using HTML table instead default markdown tables as provide it provide
+  much better code readability especially for long columns.
+-->
 
-1. [Themes](#themes)
-2. [Installation](#installation)
-3. [Overview](#overview)
-4. [Configuration options](#configuration-options)
-   1. [Window](#window)
-   2. [Window default](#window-default)
-   3. [Window current](#window-current)
-   4. [Status](#status)
-   5. [Customizing modules](#customizing-modules)
-   6. [Battery module](#battery-module)
-5. [Create a custom module](#create-a-custom-module)
-6. [Configuration Examples](#configuration-examples)
-   1. [Config 1](#config-1)
-   2. [Config 2](#config-2)
-   3. [Config 3](#config-3)
+<div align="center">
+  <a href="https://i.imgur.com/uGyGwlC.png" target="_blank" title="Grovbox dark and light themes for Tmux">
+    <img src="https://i.imgur.com/p6lUnzb.png"
+      title="Grovbox dark and light themes for Tmux"
+      width="100%"
+      height="auto"
+      style="max-width: 800px; text-align: center; border-radius: 12px; overflow:hidden;"
+      referrerpolicy="no-referrer"
+    />
+  </a>
+</div>
 
-## Themes
-
-- 🌻 [Dark](./gruvbox-dark.tmuxtheme) - created by myself
+> Screenshot made with dark & light themes (16-bit) from macOS [alacritty][github-alacritty] terminal with xterm-256color and [Hack Nerd Font Regular][github-nerd-fonts]. Backgrounds by [Aleksandar Pasaric][pexcel-1] and [Vishnu Murali][pexcel-2].
 
 ## Installation
 
-In order to have the icons displayed correctly please use / update your favorite [patched font](https://www.nerdfonts.com/font-downloads).
-If you do not have a patched font installed, you can override or remove any icon. Check the documentation bellow on the options available.
+### Install via [TPM][github-tpm] (recommended)
 
-### TPM
-
-1. Install [TPM](https://github.com/tmux-plugins/tpm)
-2. Add the gruvbox plugin:
+Add plugin at the top list of TPM plugins list in `.tmux.conf` and select desired theme.
 
 ```bash
-set -g @plugin 'z3z1ma/tmux-gruvbox'
-# ...alongside
-set -g @plugin 'tmux-plugins/tpm'
+# ~/.tmux.conf
+
+set -g @plugin 'tmux-plugins/tpm' # mandatory
+set -g @plugin 'tmux-plugins/tmux-sensible' # optional recommended
+
+set -g @plugin 'egel/tmux-gruvbox'
+# set desired theme options...
+set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+
+# other plugins
+...
 ```
 
-3. (Optional) Set your preferred flavour, it defaults to `"dark"`:
+Hit `prefix + I` to fetch the plugin and source it. Your Tmux should be updated with the theme at this point.
 
-```bash
-set -g @gruvbox_flavour 'dark'
-```
+> [!NOTE]
+> If you used v1 before and interested to adapt to v2 use this [Migration Guide from v1 to v2][docs-migration-guide-from-v1-to-v2].
 
-### Manual
+### Install manually
 
-1. Copy your desired theme's configuration contents into your Tmux config (usually stored at `~/.tmux.conf`)
-2. Reload Tmux by either restarting the session or reloading it with `tmux source-file ~/.tmux.conf`
+> [!TIP]
+> If you do not have github account [download](https://github.com/egel/tmux-gruvbox/archive/refs/heads/main.zip) it and unzip.
 
-## Overview
+1.  Clone the project to desired location
 
-![Default](./assets/overview.png)
-This is a diagram on how the theme is split between it's components.
+    ```bash
+    cd ~/projects/
+    git clone ...
+    ```
+
+1.  Add theme at to top of your `~/.tmux.conf` config.
+
+    ```bash
+    # ~/.tmux.conf
+
+    run ~/projects/tmux-gruvbox/tmux-gruvbox.tmux
+    # set desired options...
+    set -g @tmux-gruvbox 'dark' # or 'dark256', 'light', 'light256'
+    ```
 
 ## Configuration options
 
-All flavours support certain levels of customization that match our [gruvbox
-Style Guide][style-guide]. To add these customizations, add any of the following
-options to your Tmux configuration.
+<div align="center">
+  <a href="https://i.imgur.com/tO5Y1NN.png" target="_blank" title="Grovbox dark and light themes configuration sections">
+    <img src="https://i.imgur.com/x4tkeU7.png"
+         title="Grovbox dark and light themes configuration sections"
+         width="100%"
+         height="auto"
+         style="max-width: 800px; text-align: center; border-radius: 12px; overflow:hidden;"
+         referrerpolicy="no-referrer" />
+  </a>
+</div>
 
-### Window
+### Theme
 
-#### Set the window left separator:
-```sh
-set -g @gruvbox_window_left_separator "█"
+- default value: `dark256`
+
+| Theme name | Color palette | Preview link                                                          |
+| :--------- | :------------ | :-------------------------------------------------------------------- |
+| `dark`     | 16-bit colors | <a href="https://i.imgur.com/ae88LQI.png" target="_blank">preview</a> |
+| `light`    | 16-bit colors | <a href="https://i.imgur.com/fvpdRjg.png" target="_blank">preview</a> |
+| `dark256`  | 256 colors    | <a href="https://i.imgur.com/kzQTTCa.png" target="_blank">preview</a> |
+| `light256` | 256 colors    | <a href="https://i.imgur.com/tQsl6LA.png" target="_blank">preview</a> |
+
+```bash
+set -g @tmux-gruvbox 'dark' # dark256, light, light256
 ```
 
-#### Set the window middle separator:
-```sh
-set -g @gruvbox_window_middle_separator "█"
+> [!TIP]
+> Each terminal emulator can behave bit differently regarding displaying colors.
+> If you have some problems see
+> [True Color (24-bit) and italics with alacritty + tmux + vim (neovim)][github-gist-andersevenrud-alacritty-tmux-vim-truecolor]
+> where there is great wisdom how to adjust terminal, especially when used
+> alacritty and tmux.
+
+### Transparent status-bar
+
+- default value: `'false'`
+- tmux >= 3.2 (experimental)
+
+```bash
+set -g @tmux-gruvbox-statusbar-alpha 'true'
 ```
 
-#### Set the window right separator:
-```sh
-set -g @gruvbox_window_right_separator "█"
+### Left Status (Section A)
+
+- default value: `'#S'` (session name)
+
+```bash
+set -g @tmux-gruvbox-left-status-a '#S' # tmux's session name
 ```
 
-#### Position the number:
-```sh
-set -g @gruvbox_window_number_position "left"
-```
-Values:
-- left - the number will be on the left part of the window
-- right - the number will be on the right part of the window
+### Right Status (Section X)
 
-#### Enable window status:
-```sh
-set -g @gruvbox_window_status_enable "yes"
-```
-Values:
-- yes - this will enable the window status part
-- no - this will disable the window status part
+- default value: `'%Y-%m-%d'`
 
-#### Enable window status icons instead of text:
-```sh
-set -g @gruvbox_window_status_icon_enable "yes"
-```
-Values:
-- yes - this will replace the windows status text with icons
-- no - this will keep the windows status in text format
+This section is customizable for user, and by default contains current date.
 
-#### Override windows status icons
-```sh
-set -g @gruvbox_icon_window_last "󰖰"
-set -g @gruvbox_icon_window_current "󰖯"
-set -g @gruvbox_icon_window_zoom "󰁌"
-set -g @gruvbox_icon_window_mark "󰃀"
-set -g @gruvbox_icon_window_silent "󰂛"
-set -g @gruvbox_icon_window_activity "󰖲"
-set -g @gruvbox_icon_window_bell "󰂞"
+```bash
+# set date in US notation
+set -g @tmux-gruvbox-right-status-x '%m/%d/%Y' # e.g.: 01/31/2024
 ```
 
-### Window default
-
-#### Set the window default color fill:
-```sh
-set -g @gruvbox_window_default_fill "number"
-```
-Values:
-- number - only the number of the window part will have color
-- all - the entire window part will have the same color
-- none - the entire window part will have no color
-
-#### Override the window default text:
-```sh
-set -g @gruvbox_window_default_text "#{b:pane_current_path}" # use "#W" for application instead of directory
+```bash
+# or set date in EU notation
+set -g @tmux-gruvbox-right-status-x '%d.%m.%Y' # e.g.: 30.01.2024
 ```
 
-### Window current
+> [!TIP]
+> Some user may have problem with displaying dates in desired format, if this
+> case for you try using double percent `%%`
 
-#### Set the window current color fill:
-```sh
-set -g @gruvbox_window_current_fill "number"
-```
-Values:
-- number - only the number of the window part will have color
-- all - the entire window part will have the same color
-- none - the entire window part will have no color
+### Right Status (Section Y)
 
-#### Override the window current text:
-```sh
-set -g @gruvbox_window_current_text "#{b:pane_current_path}" # use "#W" for application instead of directory
-```
+- default value: `'%H:%M'`
 
-#### Set the current directory format
-```sh
-set -g @gruvbox_window_current_format_directory_text "#{b:pane_current_path}"
-```
-Use this to overide the way the current directory is displayed.
+This section is customizable for user, and by default contains current time.
 
-#### Set the directory format
-```sh
-set -g @gruvbox_window_format_directory_text "#{b:pane_current_path}"
-```
-Use this to override the way the directory is displayed.
-
-### Status
-
-#### Set the status module left separator:
-```sh
-set -g @gruvbox_status_left_separator ""
+```bash
+# set US time format
+set -g @tmux-gruvbox-right-status-y '%I:%M %p' # 09:54 PM
 ```
 
-#### Set the status module right separator:
-```sh
-set -g @gruvbox_status_right_separator "█"
+### Right Status (Section Z)
+
+- default value: `'#h'` (hostname)
+
+This section is customizable for user, and by default contains hostname.
+
+```bash
+# display hostname and enhance section with other plugin
+set -g @tmux-gruvbox-right-status-z '#h #{tmux_mode_indicator}'
 ```
 
-#### Set the status module right separator inverse:
-```sh
-set -g @gruvbox_status_right_separator_inverse "no"
-```
-Values:
-- yes - the colors will be inverted for the right separator
-- no - the colors will not be inverted for the right separator
+> [!TIP]
+> Make sure the themes' settings are defined before all other plugins,
+> otherwise content from external plugins may not be displayed correctly by
+> the theme.
 
-#### Set the status connect separator:
-```sh
-set -g @gruvbox_status_connect_separator "yes"
-```
-Values:
-- yes - the background color of the separator will not blend in with the background color of tmux
-- no - the background color of the separator will blend in with the background color of tmux
+## Development
 
+To run project locally:
 
-#### Set the status module color fill:
-```sh
-set -g @gruvbox_status_fill "icon"
-```
-Values:
-- icon - only the icon of the module will have color
-- all - the entire module will have the same color
+1.  clone the repository to desired place
 
-#### Set the module list
-```sh
-set -g @gruvbox_status_modules_right "application session"
-set -g @gruvbox_status_modules_left ""
-```
-Provide a list of modules and the order in which you want them to appear in the status.
+    ```bash
+    cd $HOME/projects/
+    git clone ...
+    ```
 
-Available modules:
-- application - display the current window running application
-- directory - display the basename of the current window path
-- session - display the number of tmux sessions running
-- user - display the username
-- host - display the hostname
-- date_time - display the date and time
-- [battery](#battery-module) - display the battery
+1.  create a symlink to the cloned repository (best in the standard [TPM][github-tpm] plugin directory):
 
-### Customizing modules
+    ```bash
+    # cd to tmux plugin directory
+    cd ~/.tmux/plugins/
 
-Every module (except the module "session") supports the following overrides:
+    # create symlink to cloned repo
+    ln -sf $HOME/projects/tmux-gruvbox/ tmux-gruvbox
+    ```
 
-#### Override the specific module icon
-```sh
-set -g @gruvbox_[module_name]_icon "icon"
-```
+1.  and in `~/.tmux.conf` set
 
-#### Override the specific module color
-```sh
-set -g @gruvbox_[module_name]_color "color"
-```
+    ```bash
+    # ~/.tmux.conf
+    set -g @plugin 'egel/tmux-gruvbox'
+    # set desired options...
+    set -g @tmux-gruvbox 'dark'
+    ```
 
-#### Override the specific module text
-```sh
-set -g @gruvbox_[module_name]_text "text"
-```
+### Linters & formatters
 
-#### Removing a specific module option
-```sh
-set -g @gruvbox_[module_name]_[option] "null"
-```
-This is for the situation where you want to remove the icon from a module.
-Ex:
-```sh
-set -g @gruvbox_date_time_icon "null"
-```
+To keep the files clean we use few program to help us achieve it:
 
-### Battery module
+1.  Editorconfig (make sure your editor have it)
+2.  Markdown (prettier/prettierd)
+3.  Shell (shellcheck, shfmt)
 
-#### Requirements
-This module depends on [tmux-battery](https://github.com/tmux-plugins/tmux-battery/tree/master).
+## License
 
-#### Install
-The preferred way to install tmux-battery is using [TPM](https://github.com/tmux-plugins/tpm).
+GPLv3 - Maciej Sypień
 
-#### Configure
-Load tmux-battery after you load gruvbox.
-```sh
-set -g @plugin 'z3z1ma/tmux-gruvbox'
-...
-set -g @plugin 'tmux-plugins/tmux-battery'
-```
-
-Add the battery module to the status modules list.
-```sh
-set -g @gruvbox_status_modules_right "... battery ..."
-```
-
-## Create a custom module
-
-It is possible to add a new custom module or overwrite any of the existing modules.
-
-Look into custom/README.md for more details.
-
-Any file added to the custom folder will be preserved when updating gruvbox.
-
-## Configuration Examples
-Below are provided a few configurations as examples or starting points.
-
-Note:
-When switching between configurations run:
-```sh
-tmux kill-server
-```
-In order to kill the tmux server and clear all global variables.
-
-
-### Config 1
-![Default](./assets/config1.png)
-
-```sh
-set -g @gruvbox_window_right_separator "█ "
-set -g @gruvbox_window_number_position "right"
-set -g @gruvbox_window_middle_separator " | "
-
-set -g @gruvbox_window_default_fill "none"
-
-set -g @gruvbox_window_current_fill "all"
-
-set -g @gruvbox_status_modules_right "application session user host date_time"
-set -g @gruvbox_status_left_separator "█"
-set -g @gruvbox_status_right_separator "█"
-
-set -g @gruvbox_date_time_text "%Y-%m-%d %H:%M:%S"
-```
-
-### Config 2
-![Default](./assets/config2.png)
-
-```sh
-set -g @gruvbox_window_left_separator "█"
-set -g @gruvbox_window_right_separator "█ "
-set -g @gruvbox_window_number_position "right"
-set -g @gruvbox_window_middle_separator "  █"
-
-set -g @gruvbox_window_default_fill "number"
-
-set -g @gruvbox_window_current_fill "number"
-set -g @gruvbox_window_current_text "#{pane_current_path}"
-
-set -g @gruvbox_status_modules_right "application session date_time"
-set -g @gruvbox_status_left_separator  ""
-set -g @gruvbox_status_right_separator " "
-set -g @gruvbox_status_right_separator_inverse "yes"
-set -g @gruvbox_status_fill "all"
-set -g @gruvbox_status_connect_separator "no"
-```
-
-### Config 3
-![Default](./assets/config3.png)
-
-```sh
-set -g @gruvbox_window_left_separator ""
-set -g @gruvbox_window_right_separator " "
-set -g @gruvbox_window_middle_separator " █"
-set -g @gruvbox_window_number_position "right"
-
-set -g @gruvbox_window_default_fill "number"
-set -g @gruvbox_window_default_text "#W"
-
-set -g @gruvbox_window_current_fill "number"
-set -g @gruvbox_window_current_text "#W"
-
-set -g @gruvbox_status_modules_right "directory user host session"
-set -g @gruvbox_status_left_separator  " "
-set -g @gruvbox_status_right_separator ""
-set -g @gruvbox_status_right_separator_inverse "no"
-set -g @gruvbox_status_fill "icon"
-set -g @gruvbox_status_connect_separator "no"
-
-set -g @gruvbox_directory_text "#{pane_current_path}"
-```
-
-[style-guide]: https://github.com/catppuccin/tmux-gruvbox/blob/main/docs/style-guide.md
-
-## 💝 Thanks to
-
-- [Pocco81](https://github.com/catppuccin)
-- [vinnyA3](https://github.com/vinnyA3)
-- [rogeruiz](https://github.com/rogeruiz)
-
-&nbsp;
-
-<p align="center"><img src="https://raw.githubusercontent.com/z3z1ma/tmux-gruvbox/main/assets/footers/gray0_ctp_on_line.svg?sanitize=true" /></p>
-<p align="center">Copyright &copy; 2021-present <a href="https://github.com/catppuccin" target="_blank">Catppuccin Org</a>
-<p align="center">Copyright &copy; 2023-present <a href="https://github.com/z3z1ma" target="_blank">Alex Butler</a>
-<p align="center"><a href="https://github.com/z3z1ma/tmux-gruvbox/blob/main/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a></p>
-
+[docs-migration-guide-from-v1-to-v2]: ./docs/migration-guide-from-v1-to-v2.md
+[github-alacritty]: https://github.com/alacritty/alacritty
+[github-gist-andersevenrud-alacritty-tmux-vim-truecolor]: https://gist.github.com/andersevenrud/015e61af2fd264371032763d4ed965b6
+[github-grovbox]: https://github.com/morhetz/gruvbox
+[github-hack]: https://github.com/chrissimpkins/Hack
+[github-nerd-fonts]: https://github.com/ryanoasis/nerd-fonts
+[github-seebi-tmux-color-solarized]: https://github.com/seebi/tmux-colors-solarized
+[github-tmux]: https://github.com/tmux/tmux
+[github-tpm]: https://github.com/tmux-plugins/tpm
+[imgur-img-gruvbox-dark-16bit-1x]: https://i.imgur.com/ae88LQI.png
+[imgur-img-gruvbox-dark-light-comparision-0.5x]: https://i.imgur.com/p6lUnzb.png
+[imgur-img-gruvbox-dark-light-comparision-1x]: https://i.imgur.com/uGyGwlC.png
+[imgur-img-gruvbox-dark256-1x]: https://i.imgur.com/kzQTTCa.png
+[imgur-img-gruvbox-light-16bit-1x]: https://i.imgur.com/fvpdRjg.png
+[imgur-img-gruvbox-light256-1x]: https://i.imgur.com/tQsl6LA.png
+[pexcel-1]: https://www.pexels.com/photo/urban-photo-of-an-alley-2411688/
+[pexcel-2]: https://www.pexels.com/photo/lights-hanging-above-the-alley-in-a-city-at-night-27044195/

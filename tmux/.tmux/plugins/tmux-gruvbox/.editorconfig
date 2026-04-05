@@ -12,19 +12,6 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-# go
-[*.go]
-indent_style = tab
-indent_size = 4
-
-# python
-[*.{ini,py,py.tpl,rst}]
-indent_size = 4
-
-# rust
-[*.rs]
-indent_size = 4
-
 # documentation, utils
 [*.{md,mdx,diff}]
 trim_trailing_whitespace = false
@@ -32,3 +19,19 @@ trim_trailing_whitespace = false
 # windows shell scripts
 [*.{cmd,bat,ps1}]
 end_of_line = crlf
+
+[*.{sh,tmux}]
+indent_style = space
+indent_size = 2
+
+shell_variant      = posix # like -ln=posix
+binary_next_line   = true  # like -bn
+switch_case_indent = true  # like -ci
+space_redirects    = true  # like -sr
+keep_padding       = true  # like -kp
+function_next_line = true  # like -fn
+never_split        = true  # like -ns
+
+[Makefile]
+indent_style = tab
+indent_size = 8
