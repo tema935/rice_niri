@@ -140,19 +140,19 @@ require("lazy").setup({
 			})
 
 			-- Настройка автодополнения командной строки (:)
-			cmp.setup.cmdline(':', {
+			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
-					{ name = 'cmdline' }
-				})
+					{ name = "cmdline" },
+				}),
 			})
 
 			-- Опционально: автодополнение для поиска (/)
-			cmp.setup.cmdline('/', {
+			cmp.setup.cmdline("/", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = {
-					{ name = 'buffer' }
-				}
+					{ name = "buffer" },
+				},
 			})
 		end,
 	},
@@ -241,4 +241,4 @@ require("lazy").setup({
 	checker = { enabled = true, notify = false },
 })
 
-print("Neovim config loaded (no warnings!) & Hello my new version")
+print("Neovim config loaded   (no warnings!) & Hello my new version")

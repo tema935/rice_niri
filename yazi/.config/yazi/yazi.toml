@@ -1,0 +1,26 @@
+[preview]
+image_filter = "lanczos3"
+# ~/.config/yazi/yazi.toml
+[opener]
+# --- Изображения ---
+"image/jpeg"      = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/png"       = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/gif"       = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/webp"      = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/bmp"       = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/tiff"      = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/svg+xml"   = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/x‑icon"    = [{ run = 'imv "$@"', desc = "Open in imv", block = true }]
+"image/heic"      = [{ run = 'imv "$@"', desc = "Open in imv", block = true }] # если нужно
+# --- Видео ---
+"video/mp4"       = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]
+"video/x-matroska"= [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .mkv
+"video/webm"      = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]
+"video/ogg"       = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]
+"video/quicktime" = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .mov
+"video/x-msvideo" = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .avi
+"video/x-flv"     = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]
+"video/x-ms-wmv"  = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]
+"video/mpeg"      = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .mpg, .mpeg
+"video/3gpp"      = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .3gp
+"video/3gpp2"     = [{ run = 'mpv "$@"', desc = "Open in mpv", block = true }]  # .3g2

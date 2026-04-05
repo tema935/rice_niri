@@ -18,6 +18,7 @@ alias send2phone='kdeconnect-cli --device 976c9f2853ad426a8300529bc2c96b74 --sha
 alias cat='bat'
 alias comm_back='tmux new-session -d'
 alias shr='doas sh'
+alias yandex_kill='flatpak kill ru.yandex.Browser'
 
 # переменные
 set -gx DISPLAY :0
